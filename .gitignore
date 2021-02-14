@@ -25,3 +25,6 @@ hs_err_pid*
 # Ignore Idea files
 **/*.iml
 **/.idea
+
+# Ignore target folder
+**/target
