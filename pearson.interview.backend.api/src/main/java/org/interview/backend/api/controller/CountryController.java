@@ -20,13 +20,13 @@ public class CountryController {
     }
 
     @GetMapping("/country/{id}")
-    private Country getCountry(@PathVariable("id") int id) {
+    private Country getCountry(@PathVariable int id) {
 
         return countryService.getCountryById(id);
     }
 
-    @DeleteMapping("/student/{id}")
-    private void deleteCountry(@PathVariable("id") int id) {
+    @DeleteMapping("/country/{id}")
+    private void deleteCountry(@PathVariable int id) {
 
         countryService.delete(id);
     }
