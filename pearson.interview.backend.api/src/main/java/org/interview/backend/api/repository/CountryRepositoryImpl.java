@@ -5,7 +5,6 @@ import org.interview.backend.api.entity.Country;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.transaction.Transaction;
 import javax.transaction.Transactional;
 
 public class CountryRepositoryImpl implements CustomCountryRepository {
