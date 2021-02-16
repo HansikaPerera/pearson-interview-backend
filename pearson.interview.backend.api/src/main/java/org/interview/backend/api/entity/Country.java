@@ -1,7 +1,5 @@
 package org.interview.backend.api.entity;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 @Entity
