@@ -1,27 +1,37 @@
 package org.interview.backend.api.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 
 @Entity
 @Table
 public class Country {
 
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
     @Column
-    private int id;
+    private String id;
 
     @Column
     private String name;
 
-    public int getId() {
+    @Column
+    private int population;
+
+    @Column
+    private String capital;
+
+    public String getId() {
 
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
 
         this.id = id;
     }
@@ -34,5 +44,25 @@ public class Country {
     public void setName(String name) {
 
         this.name = name;
+    }
+
+    public int getPopulation() {
+
+        return population;
+    }
+
+    public void setPopulation(int population) {
+
+        this.population = population;
+    }
+
+    public String getCapital() {
+
+        return capital;
+    }
+
+    public void setCapital(String capital) {
+
+        this.capital = capital;
     }
 }

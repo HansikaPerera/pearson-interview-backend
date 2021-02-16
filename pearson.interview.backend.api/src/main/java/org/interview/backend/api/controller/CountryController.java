@@ -32,7 +32,14 @@ public class CountryController {
     }
 
     @PostMapping("/country")
-    private int saveCountry(@RequestBody Country country) {
+    private Country saveCountry(@RequestBody Country country) {
+
+        countryService.saveOrUpdate(country);
+        return country;
+    }
+
+    @PutMapping("/country")
+    private String updateCountry(@RequestBody Country country) {
 
         countryService.saveOrUpdate(country);
         return country.getId();

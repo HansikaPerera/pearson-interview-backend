@@ -26,9 +26,9 @@ public class CountryService {
         return countryRepository.findById(id).get();
     }
 
-    public void saveOrUpdate(Country student) {
+    public Country saveOrUpdate(Country country) {
 
-        countryRepository.save(student);
+        return countryRepository.save(country);
     }
 
     public void delete(int id) {
