@@ -21,9 +21,9 @@ public class CountryService {
         return countries;
     }
 
-    public Country getCountryById(int id) {
+    public Country getCountryByName(String name) {
 
-        return countryRepository.findById(id).get();
+        return countryRepository.getCountryByCountryName(name);
     }
 
     public Country saveOrUpdate(Country country) {
@@ -31,8 +31,8 @@ public class CountryService {
         return countryRepository.save(country);
     }
 
-    public void delete(int id) {
+    public void delete(String name) {
 
-        countryRepository.deleteById(id);
+        countryRepository.deleteByCountryName(name);
     }
 }

@@ -19,16 +19,16 @@ public class CountryController {
         return countryService.getAllCountries();
     }
 
-    @GetMapping("/country/{id}")
-    private Country getCountry(@PathVariable int id) {
+    @GetMapping("/country/{name}")
+    private Country getCountry(@PathVariable String name) {
 
-        return countryService.getCountryById(id);
+        return countryService.getCountryByName(name);
     }
 
-    @DeleteMapping("/country/{id}")
-    private void deleteCountry(@PathVariable int id) {
+    @DeleteMapping("/country/{name}")
+    private void deleteCountry(@PathVariable String name) {
 
-        countryService.delete(id);
+        countryService.delete(name);
     }
 
     @PostMapping("/country")
@@ -39,9 +39,9 @@ public class CountryController {
     }
 
     @PutMapping("/country")
-    private String updateCountry(@RequestBody Country country) {
+    private Country updateCountry(@RequestBody Country country) {
 
         countryService.saveOrUpdate(country);
-        return country.getId();
+        return country;
     }
 }
